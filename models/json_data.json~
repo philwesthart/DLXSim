@@ -1,0 +1,2870 @@
+  { 
+    "J" : 
+    { 
+      "name" : "J",
+      "num_micro_instructions" : 3,
+      "instruction_type" : "J",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCOES1" : 1,
+		    "IROES2": 1,
+		    "S2OP" : 5,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  }
+	}
+    },
+    "JAL" : 
+    { 
+      "name" : "JAL",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "J",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCOES1" : 1,
+		    "ALUOP" : 2,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 2,
+		    "REGLOAD" : 1,
+		    "PCOES1" : 1,
+		    "IROES2": 1,
+		    "S2OP" : 5,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  }
+	}
+    },    
+
+    "BNEZ" : 
+    { 
+      "name" : "BNEZ",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "R",
+      "is_branching" : true,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "ALUOP" : 0
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCOES1" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  }
+        }
+    },
+    "BEQZ" : 
+    { 
+      "name" : "BEQZ",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "R",
+      "is_branching" : true,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "ALUOP" : 0
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCOES1" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  }
+        }
+    },
+
+    "ADDI" : 
+    { 
+      "name" : "ADDI",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 0,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD" : 1
+		}	    
+	  }
+	}
+    },
+    "SUBI" : 
+    { 
+      "name" : "SUBI",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 1,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD" : 1
+		}	    
+	  }
+	}
+    },    
+    "ANDI" : 
+    { 
+      "name" : "ANDI",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 4,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD" : 1
+		}	    
+	  }
+	}
+    },
+    "ORI" : 
+    { 
+      "name" : "ORI",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 5,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD" : 1
+		}	    
+	  }
+	}
+    },
+    "XORI" : 
+    { 
+      "name" : "XORI",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 6,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD" : 1
+		}	    
+	  }
+	}
+    },
+    "LHI" : 
+    { 
+      "name" : "LHI",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "IROES2" : 1,
+		    "S2OP" : 6,
+		    "ALUOP" : 8,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD" : 1
+		}	    
+	  }
+	}
+    },  
+    "JR" : 
+    { 
+      "name" : "JR",
+      "num_micro_instructions" : 3,
+      "instruction_type" : "R",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{		
+		    "AOE" : 1,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  }
+	}
+    },
+    "JALR" : 
+    { 
+      "name" : "JALR",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "R",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCOES1" : 1,
+		    "ALUOP" : 2,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 2,
+		    "REGLOAD" : 1,
+		    "AOE" : 1,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  }
+	}
+    },  
+    "SEQI" : 
+    { 
+      "name" : "SEQI",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 16,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD" : 1
+		}	    
+	  }
+	}
+    },    
+    "SNEI" : 
+    { 
+      "name" : "SNEI",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 18,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD" : 1
+		}	    
+	  }
+	}
+    },    
+    "SLTI" : 
+    { 
+      "name" : "SLTI",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 20,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD" : 1
+		}	    
+	  }
+	}
+    },    
+    "SGTI" : 
+    { 
+      "name" : "SGTI",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 24,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD" : 1
+		}	    
+	  }
+	}
+    },    
+    "SLEI" : 
+    { 
+      "name" : "SLEI",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 26,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD" : 1
+		}	    
+	  }
+	}
+    },      
+    "SGEI" : 
+    { 
+      "name" : "SGEI",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 22,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD" : 1
+		}	    
+	  }
+	}
+    },    
+    "LW" : 
+    { 
+      "name" : "LW",
+      "num_micro_instructions" : 6,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 0,
+		    "MARLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "MEMOP" : 0,
+		    "MEMREAD" : 1,
+		    "MDRLOAD" : 1,
+		    "PCMARSELECT" : 0
+		}	    
+	  },
+
+	  "S4" : 
+	  {
+	    "state_number" : 4,
+	    "state_string" : "S4",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "MDROES2" : 1,
+		    "ALUOP" : 3,
+		    "CLOAD" : 1,
+		    "S2OP" : 0
+		}	    
+	  },
+	  "S5" : 
+	  {
+	    "state_number" : 5,
+	    "state_string" : "S5",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD" : 3
+		}	    
+	  }
+        }
+    },    
+    "LH" : 
+    { 
+      "name" : "LH",
+      "num_micro_instructions" : 6,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 0,
+		    "MARLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "MEMOP" : 1,
+		    "MEMREAD" : 1,
+		    "MDRLOAD" : 1,
+		    "PCMARSELECT" : 0
+		}	    
+	  },
+
+	  "S4" : 
+	  {
+	    "state_number" : 4,
+	    "state_string" : "S4",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "MDROES2" : 1,
+		    "ALUOP" : 3,
+		    "CLOAD" : 1,
+		    "S2OP" : 3
+		}	    
+	  },
+	  "S5" : 
+	  {
+	    "state_number" : 5,
+	    "state_string" : "S5",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD" : 3
+		}	    
+	  }
+        }
+    },
+    "LB" : 
+    { 
+      "name" : "LB",
+      "num_micro_instructions" : 6,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 0,
+		    "MARLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "MEMOP" : 2,
+		    "MEMREAD" : 1,
+		    "MDRLOAD" : 1,
+		    "PCMARSELECT" : 0
+		}	    
+	  },
+
+	  "S4" : 
+	  {
+	    "state_number" : 4,
+	    "state_string" : "S4",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "MDROES2" : 1,
+		    "ALUOP" : 3,
+		    "CLOAD" : 1,
+		    "S2OP" : 1
+		}	    
+	  },
+	  "S5" : 
+	  {
+	    "state_number" : 5,
+	    "state_string" : "S5",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD" : 3
+		}	    
+	  }
+        }
+    },
+    "SB" : 
+    { 
+      "name" : "SB",
+      "num_micro_instructions" : 5,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 0,
+		    "MARLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : 3,
+		    "MEMREAD" : 0,
+		    "MDRLOAD" : 1
+		}	    
+	  },
+
+	  "S4" : 
+	  {
+	    "state_number" : 4,
+	    "state_string" : "S4",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 1,
+		    "MEMWRITE" : 1,
+		    "MEMOP" : 2
+		}	    
+	  }
+        }
+    },
+    "SH" : 
+    { 
+      "name" : "SH",
+      "num_micro_instructions" : 5,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 0,
+		    "MARLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : 3,
+		    "MEMREAD" : 0,
+		    "MDRLOAD" : 1
+		}	    
+	  },
+
+	  "S4" : 
+	  {
+	    "state_number" : 4,
+	    "state_string" : "S4",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 1,
+		    "MEMWRITE" : 1,
+		    "MEMOP" : 1
+		}	    
+	  }
+        }
+    },    
+    "SW" : 
+    { 
+      "name" : "SW",
+      "num_micro_instructions" : 5,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 0,
+		    "MARLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : 3,
+		    "MEMREAD" : 0,
+		    "MDRLOAD" : 1
+		}	    
+	  },
+
+	  "S4" : 
+	  {
+	    "state_number" : 4,
+	    "state_string" : "S4",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 1,
+		    "MEMWRITE" : 1,
+		    "MEMOP" : 0
+		}	    
+	  }
+        }
+    },
+    "SB" : 
+    { 
+      "name" : "SB",
+      "num_micro_instructions" : 5,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 0,
+		    "MARLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : 3,
+		    "MEMREAD" : 0,
+		    "MDRLOAD" : 1
+		}	    
+	  },
+
+	  "S4" : 
+	  {
+	    "state_number" : 4,
+	    "state_string" : "S4",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 1,
+		    "MEMWRITE" : 1,
+		    "MEMOP" : 2
+		}	    
+	  }
+        }
+    },
+    "SH" : 
+    { 
+      "name" : "SH",
+      "num_micro_instructions" : 5,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 0,
+		    "MARLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : 3,
+		    "MEMREAD" : 0,
+		    "MDRLOAD" : 1
+		}	    
+	  },
+
+	  "S4" : 
+	  {
+	    "state_number" : 4,
+	    "state_string" : "S4",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 1,
+		    "MEMWRITE" : 1,
+		    "MEMOP" : 1
+		}	    
+	  }
+        }
+    },    
+    "SW" : 
+    { 
+      "name" : "SW",
+      "num_micro_instructions" : 5,
+      "instruction_type" : "I",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "IROES2" : 1,
+		    "S2OP" : 3,
+		    "ALUOP" : 0,
+		    "MARLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : 3,
+		    "MEMREAD" : 0,
+		    "MDRLOAD" : 1
+		}	    
+	  },
+
+	  "S4" : 
+	  {
+	    "state_number" : 4,
+	    "state_string" : "S4",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 1,
+		    "MEMWRITE" : 1,
+		    "MEMOP" : 0
+		}	    
+	  }
+        }
+    },
+
+    "SLL" : 
+    { 
+      "name" : "SLL",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "R",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : 8,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD": 1
+		}	    
+	  }
+        }
+    },    
+    "SRL" : 
+    { 
+      "name" : "SRL",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "R",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : 10,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD": 1
+		}	    
+	  }
+        }
+    },    
+    "SRA" : 
+    { 
+      "name" : "SRA",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "R",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : 12,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD": 1
+		}	    
+	  }
+        }
+    },
+    "MULT" : 
+    { 
+      "name" : "MULT",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "R",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : -1,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD": 1
+		}	    
+	  }
+        }
+    },
+    "DIV" : 
+    { 
+      "name" : "DIV",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "R",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : -1,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD": 1
+		}	    
+	  }
+        }
+    },
+    "ADD" : 
+    { 
+      "name" : "ADD",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "R",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : 0,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD": 1
+		}	    
+	  }
+        }
+    },
+    "SUB" : 
+    { 
+      "name" : "SUB",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "R",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : 1,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD": 1
+		}	    
+	  }
+        }
+    },
+    "AND" : 
+    { 
+      "name" : "AND",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "R",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : 4,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD": 1
+		}	    
+	  }
+        }
+    },
+    "OR" : 
+    { 
+      "name" : "OR",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "R",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : 5,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD": 1
+		}	    
+	  }
+        }
+    },
+    "XOR" : 
+    { 
+      "name" : "XOR",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "R",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : 6,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD": 1
+		}	    
+	  }
+        }
+    },
+    "SEQ" : 
+    { 
+      "name" : "SEQ",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "R",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : 16,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD": 1
+		}	    
+	  }
+        }
+    },
+    "SNE" : 
+    { 
+      "name" : "SNE",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "R",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : 18,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD": 1
+		}	    
+	  }
+        }
+    },
+    "SLT" : 
+    { 
+      "name" : "SLT",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "R",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : 20,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD": 1
+		}	    
+	  }
+        }
+    },
+    "SGT" : 
+    { 
+      "name" : "SGT",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "R",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : 24,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD": 1
+		}	    
+	  }
+        }
+    },
+    "SLE" : 
+    { 
+      "name" : "SLE",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "R",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : 26,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD": 1
+		}	    
+	  }
+        }
+    },
+    "SGE" : 
+    { 
+      "name" : "SGE",
+      "num_micro_instructions" : 4,
+      "instruction_type" : "R",
+      "is_branching" : false,
+      "MicroInstructionStates" : 
+        {
+	  "S0" : 
+	  {
+	    "state_number" : 0,
+	    "state_string" : "S0",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "PCMARSELECT" : 0,
+		    "MEMREAD" : 1,
+		    "MEMOP" : 0,
+		    "IRLOAD" : 1
+		}	    
+	  },
+	  "S1" : 
+	  {
+	    "state_number" : 1,
+	    "state_string" : "S1",
+	    "has_mem_wait" : true,
+	    "control_signals":
+		{
+		    "ALOAD" : 1,
+		    "BLOAD" : 1,
+		    "PCOES1":1,
+		    "S2OP" : 7,
+		    "ALUOP" : 0,
+		    "PCLOAD" : 1
+		}	    
+	  },
+	  "S2" : 
+	  {
+	    "state_number" : 2,
+	    "state_string" : "S2",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "AOE" : 1,
+		    "BOE" : 1,
+		    "S2OP" : 0,
+		    "ALUOP" : 22,
+		    "CLOAD" : 1
+		}	    
+	  },
+	  "S3" : 
+	  {
+	    "state_number" : 3,
+	    "state_string" : "S3",
+	    "has_mem_wait" : false,
+	    "control_signals":
+		{
+		    "REGSELECT" : 1,
+		    "REGLOAD": 1
+		}	    
+	  }
+        }
+    }
+}

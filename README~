@@ -1,0 +1,14 @@
+DLX Learning Simulator by Phil West
+Completed for Dr. Lin's Fall 2014 EE51123 Computer Architecture
+=====================================
+This application is a learning simulator intended to teach the CPU execution for a non-pipelined DLX. From the main screen, the user can select an instruction to be "executed". The State Transition Diagram is then loaded and appropriate control signals are displayed. The user can then select a state and the data path and control signals will be outlined in the DLX CPU image on the left side of the screen.
+
+The application also has a quiz mode, where the control signals will be initially hidden. Clicking on the hidden block will reveal the control signals underneath.
+
+It should be noted that each State Transition Diagram reuses the state titles of S3, S4, etc. In a true State Transition Diagram, each state would be given a unique identifier. Some states, such as instruction fetch, are capable of being reused for each instruction.
+
+
+=====================================
+To begin, launch main.py using python. 
+
+The data used to drive the application is stored in models/json_data.json. This can be modified to add additional instructions.

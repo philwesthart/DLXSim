@@ -4,6 +4,7 @@ import sys
 import os
 sys.path.append(os.path.abspath('.'))
 print os.path.abspath('.')
+
 class InstructionSet():
     DATA_FILE = os.path.abspath('./models/json_data.json')
     def __init__(self):
@@ -66,8 +67,6 @@ class MicroInstructionState():
         self.state_number = json_micro_instr['state_number']
         self.control_signals = json_micro_instr['control_signals']
         self.has_mem_wait = json_micro_instr['has_mem_wait']
-        self.secondary_input = ''
-        self.secondary_control_signals = ''
 
     def to_JSON(self):
         pass

@@ -68,9 +68,7 @@ class MicroInstructionStateView():
             self.canvas.create_line(self.x + self.CIRCLE_WIDTH, self.y + self.CIRCLE_WIDTH/2, self.x + self.CIRCLE_WIDTH + self.ARROW_LENGTH, self.y+self.CIRCLE_WIDTH/2)
             self.canvas.create_polygon(self.x + self.CIRCLE_WIDTH + self.ARROW_LENGTH + self.ARROW_HEAD_LENGTH, self.y + self.CIRCLE_WIDTH/2, self.x  + self.CIRCLE_WIDTH + self.ARROW_LENGTH, self.y + self.CIRCLE_WIDTH/2 + self.ARROW_HEAD_HEIGHT/2, self.x + self.CIRCLE_WIDTH + self.ARROW_LENGTH, self.y + self.CIRCLE_WIDTH/2 - self.ARROW_HEAD_HEIGHT/2)
 
-            #make input label
-
-            #make control signals label
+             #make control signals label
             con_sig = ''
             for key, val in self.control_signals.items():
                 con_sig = con_sig + key + ' = ' + str(val) + '\n'

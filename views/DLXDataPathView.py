@@ -1,7 +1,5 @@
 import Tkinter as tk
-
-def click_handler(event):
-    print "[" + str(event.x) + ', ' + str(event.y) + "],"
+import os
 
 class DLXDataPathView(tk.Canvas):
     WIDTH=550
@@ -63,12 +61,9 @@ class DLXDataPathView(tk.Canvas):
         tk.Canvas.__init__(self, parent, width=self.WIDTH, height=self.HEIGHT)
         self.controller = controller
         self.controller.set_DLXDataPathView(self)
-
-        self.photo = tk.PhotoImage(file="/home/pwest/Code/DLXSim/images/DLXCPU.gif")
-
-        self.bind("<Button-1>", click_handler)
         
-        #self.control_signals = {'S2OP':1, 'ALUOP':2, 'ZFLAG':1, 'CLOAD':1, 'REGLOAD':1, 'ALOAD':1, 'AOE': 1, 'BLOAD':1, 'BOE':1, 'REGSELECT':1, 'IRLOAD':1, 'IROES1':1, 'IROES2':1, 'OPCODE':1, 'OPCODEALU':1, 'RESET':1,'PCLOAD':1, 'PCOES1':1, 'PCMARSELECT':1,'MARLOAD':1,'MEMREAD':1,'MDRLOAD':1,'MDROES2':1,'MEMWRITE':1,'MEMOP':1, 'MEMWAIT':1}
+        self.photo = tk.PhotoImage(file=os.path.abspath("./images/DLXCPU.gif"))
+
         self.control_signals = {}
 
         self.draw()
@@ -148,11 +143,9 @@ class DLXDataPathView(tk.Canvas):
                 self.draw_poly_line(self.ALU_TO_MDR_MUX_LINE, self.DATA_COLOR, True)
             else:                
                 self.draw_poly_line(self.MEM_TO_MDR_MUX_LINE, self.DATA_COLOR, True)
-                
         if 'MDRLOAD' in self.control_signals:
             self.draw_poly_line(self.MDRLOAD_LINE)
             self.draw_poly_line(self.MUX_TO_MDR_LINE, self.DATA_COLOR, True)
-
         if 'MDROES2' in self.control_signals:
             self.draw_poly_line(self.MDROES2_LINE)
             self.draw_poly_line(self.MDR_TO_S2_LINE, self.DATA_COLOR, True)

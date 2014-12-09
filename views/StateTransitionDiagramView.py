@@ -3,16 +3,17 @@ import tkFont
 from MicroInstructionStateView import MicroInstructionStateView
 
 class StateTransitionDiagramView(tk.Canvas):
-    INSTR_TITLE_COORDS = [300, 0]
+    INSTR_TITLE_COORDS = [425, 60]
     STATE_STRING = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5']
     STATE_SPACING = 120
-    STATE_ZERO_COORDS  = [50, 100]
+    STATE_ZERO_COORDS  = [50, 145]
     STATE_ONE_COORDS   = [STATE_SPACING * 1 + STATE_ZERO_COORDS[0], STATE_ZERO_COORDS[1]]
     STATE_TWO_COORDS   = [STATE_SPACING * 2 + STATE_ZERO_COORDS[0], STATE_ZERO_COORDS[1]]
     STATE_THREE_COORDS = [STATE_SPACING * 3 + STATE_ZERO_COORDS[0], STATE_ZERO_COORDS[1]]
     STATE_FOUR_COORDS  = [STATE_SPACING * 4 + STATE_ZERO_COORDS[0], STATE_ZERO_COORDS[1]]
     STATE_FIVE_COORDS  = [STATE_SPACING * 5 + STATE_ZERO_COORDS[0], STATE_ZERO_COORDS[1]]
     STATE_COORDS = [STATE_ZERO_COORDS,STATE_ONE_COORDS,STATE_TWO_COORDS,STATE_THREE_COORDS,STATE_FOUR_COORDS,STATE_FIVE_COORDS]
+    SUBTITLE_STRING = "Select a microinstruction state to view control signals and data flow on the image to the left"
 
     def __init__(self, parent, controller):
         self.parent = parent
@@ -28,8 +29,9 @@ class StateTransitionDiagramView(tk.Canvas):
         self.ISVs = []
         self.delete(tk.ALL)
 
-        self.create_text(self.INSTR_TITLE_COORDS[0],self.INSTR_TITLE_COORDS[1],text=instr.name, font=tkFont.Font(size=30), anchor=tk.N)
-        
+        self.create_text(self.INSTR_TITLE_COORDS[0],self.INSTR_TITLE_COORDS[1],text=instr.name, font=tkFont.Font(size=30), anchor=tk.S)
+        self.create_text(self.INSTR_TITLE_COORDS[0], self.INSTR_TITLE_COORDS[1], text=self.SUBTITLE_STRING, anchor=tk.N)
+
         is_last = False
         is_branching = False
         for index, micro_instr in enumerate(instr.micro_instrs):            

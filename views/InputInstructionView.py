@@ -15,7 +15,6 @@ class InputInstructionView(Frame):
     def __init__(self, parent, controller):
         Frame.__init__(self, parent)
         self.parent = parent
-#        tk.Grid.__init__(self, parent)
         self.controller = controller
         i_instrs = controller.get_i_instr()
         r_instrs = controller.get_r_instr() 

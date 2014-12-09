@@ -7,7 +7,7 @@ class InputInstructionView(Frame):
     START_COL = 1
     START_ROW = 0
     COLS_PER_TYPE = 3
-    INSTR_BUTTON_WIDTH = 2
+    INSTR_BUTTON_WIDTH = 4
     I_BG = "#00AAAA"
     R_BG = "#AA00AA"
     J_BG = "#AAAA00"

@@ -14,3 +14,6 @@ To begin, launch main.py using python. On a Unix device: ./main.py from the DLXS
 If you are running on a Windows machine, follow the directions at https://docs.python.org/3.3/using/windows.html to install Python 2.7. Then double-click main.py (.py files should be associated with python.exe by the installation).
 
 The data used to drive the application is stored in models/json_data.json. This can be modified to add additional instructions.
+
+=====================================
+DLX CPU image provided Dr. Lin.
